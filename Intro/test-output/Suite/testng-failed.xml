@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="URL" value="www.google.com"/>
+  <test thread-count="5" name="Para(failed)">
+    <classes>
+      <class name="TestNg.DependsonMethods">
+        <methods>
+          <include name="C" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestNg.DependsonMethods -->
+    </classes>
+  </test> <!-- Para(failed) -->
+  <test thread-count="5" name="para2(failed)">
+    <classes>
+      <class name="TestNg.Paremeterized">
+        <methods>
+          <include name="M" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestNg.Paremeterized -->
+    </classes>
+  </test> <!-- para2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

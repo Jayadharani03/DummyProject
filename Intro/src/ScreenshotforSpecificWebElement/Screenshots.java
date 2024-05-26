@@ -1,0 +1,48 @@
+package ScreenshotforSpecificWebElement;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Screenshots {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+	
+		
+		System.setProperty("webdriver.chrome.driver",
+				"C:/Users/jaya0/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		driver.switchTo().newWindow(WindowType.TAB);
+
+		Set<String> Handles = driver.getWindowHandles();
+		Iterator<String> it = Handles.iterator();
+		String Parentwindow = it.next();
+		String Childwindow = it.next();
+		driver.switchTo().window(Childwindow);
+		driver.get("https://rahulshettyacademy.com");
+		Thread.sleep(2000);
+		String s=driver.findElement(By.xpath("//a[text()='All-Access Membership-Complete Access to 25+ Courses (and counting!)']")).getText();
+		driver.switchTo().window(Parentwindow);
+		WebElement d=driver.findElement(By.cssSelector("input[name='email']"));
+		d.sendKeys(s);
+		File files=d.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(files, new File("Logo.png"));
+		driver.quit();
+		
+		
+		
+		
+	}
+
+}

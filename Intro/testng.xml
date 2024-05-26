@@ -1,0 +1,22 @@
+<suite name="Suite">
+	<test thread-count="5" name="Online">
+		<classes>
+			<class name="TestNg.Eligilbe">
+				<methods>
+					<include name="salary" />
+				</methods>
+			</class>
+			<class name="TestNg.Verification" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Offline">
+		<classes>
+			<class name="TestNg.Process">
+				<methods>
+					<exclude name="Transfer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

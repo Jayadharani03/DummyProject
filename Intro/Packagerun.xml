@@ -1,0 +1,9 @@
+<suite name="Suite">
+	<test thread-count="5" name="Online">
+		<packages>
+			<package name="TestNg"></package>
+		</packages>
+	</test>
+
+
+</suite>

@@ -1,0 +1,18 @@
+<suite name="Suite">
+	<parameter name="URL" value="www.google.com"></parameter>
+	<test thread-count="5" name="Para">
+		<parameter name="URL" value="www.Facebook.com"></parameter>
+		<classes>
+			<class name="TestNg.DependsonMethods"/>
+			
+		</classes>
+	</test>
+
+<test thread-count="5" name="para2">
+		<classes>
+			
+			<class name="TestNg.Paremeterized" />
+		</classes>
+	</test>
+	
+</suite>                                                                               
